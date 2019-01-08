@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.mapper.OrderMapper" >
+
+    <resultMap id="BaseResultMap" type="com.example.po.Order" >
+        <id column="ID" property="id" jdbcType="VARCHAR" />
+        <result column="ORDER_NUMBER" property="orderNumber" jdbcType="VARCHAR" />
+        <result column="ORDER_STATUS" property="orderStatus" jdbcType="VARCHAR" />
+        <result column="CREAT_TIME" property="creatTime" jdbcType="TIMESTAMP" />
+        <result column="VERSION" property="version" jdbcType="BIGINT" />
+    </resultMap>
+
+    <insert id="save" parameterType="com.example.po.Order">
+    	INSERT INTO tb_order (ID,ORDER_STATUS) VALUES (#{id},#{orderStatus});
+    </insert>
+</mapper>
